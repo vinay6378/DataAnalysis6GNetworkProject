@@ -1,0 +1,174 @@
+{
+  "best_model_name": "rf",
+  "metrics_by_model": {
+    "logreg": {
+      "cv_accuracy_mean": 0.9061682467298692,
+      "cv_accuracy_std": 0.001897973703340129,
+      "last_fold_report": {
+        "High": {
+          "precision": 0.6934812760055479,
+          "recall": 0.9633911368015414,
+          "f1-score": 0.8064516129032258,
+          "support": 519.0
+        },
+        "Low": {
+          "precision": 0.9872521246458924,
+          "recall": 0.9094328037454908,
+          "f1-score": 0.9467460349167033,
+          "support": 13029.0
+        },
+        "Medium": {
+          "precision": 0.6959168146081663,
+          "recall": 0.8800513149454778,
+          "f1-score": 0.7772270216683189,
+          "support": 3118.0
+        },
+        "accuracy": 0.905616224648986,
+        "macro avg": {
+          "precision": 0.792216738419869,
+          "recall": 0.9176250851641701,
+          "f1-score": 0.843474889829416,
+          "support": 16666.0
+        },
+        "weighted avg": {
+          "precision": 0.9235985444741674,
+          "recall": 0.905616224648986,
+          "f1-score": 0.9106622062635497,
+          "support": 16666.0
+        }
+      },
+      "last_fold_confusion_matrix": [
+        [
+          500,
+          0,
+          19
+        ],
+        [
+          0,
+          11849,
+          1180
+        ],
+        [
+          221,
+          153,
+          2744
+        ]
+      ]
+    },
+    "rf": {
+      "cv_accuracy_mean": 0.9996759870394815,
+      "cv_accuracy_std": 0.00031886068056132834,
+      "last_fold_report": {
+        "High": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 519.0
+        },
+        "Low": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 13029.0
+        },
+        "Medium": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 3118.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 16666.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 16666.0
+        }
+      },
+      "last_fold_confusion_matrix": [
+        [
+          519,
+          0,
+          0
+        ],
+        [
+          0,
+          13029,
+          0
+        ],
+        [
+          0,
+          0,
+          3118
+        ]
+      ]
+    },
+    "xgb": {
+      "cv_accuracy_mean": 0.9984759390375615,
+      "cv_accuracy_std": 0.0005347961107681911,
+      "last_fold_report": {
+        "High": {
+          "precision": 0.998062015503876,
+          "recall": 0.9922928709055877,
+          "f1-score": 0.9951690821256038,
+          "support": 519.0
+        },
+        "Low": {
+          "precision": 0.9990787655458314,
+          "recall": 0.9988487220815104,
+          "f1-score": 0.9989637305699481,
+          "support": 13029.0
+        },
+        "Medium": {
+          "precision": 0.9939180537772087,
+          "recall": 0.995830660679923,
+          "f1-score": 0.9948734380006409,
+          "support": 3118.0
+        },
+        "accuracy": 0.9980799231969278,
+        "macro avg": {
+          "precision": 0.9970196116089721,
+          "recall": 0.9956574178890071,
+          "f1-score": 0.996335416898731,
+          "support": 16666.0
+        },
+        "weighted avg": {
+          "precision": 0.9980815981051535,
+          "recall": 0.9980799231969278,
+          "f1-score": 0.9980803179470205,
+          "support": 16666.0
+        }
+      },
+      "last_fold_confusion_matrix": [
+        [
+          515,
+          0,
+          4
+        ],
+        [
+          0,
+          13014,
+          15
+        ],
+        [
+          1,
+          12,
+          3105
+        ]
+      ]
+    }
+  },
+  "class_distribution": {
+    "Low": 77825,
+    "Medium": 19189,
+    "High": 2986
+  },
+  "imbalance_ratio": 26.063295378432684,
+  "class_weight": "balanced"
+}
