@@ -184,12 +184,12 @@ def main():
 
     c1, c2 = st.columns([1, 1])
     with c1:
-        st.write(f"**Model in use:** `{best_model_name}`")
-        st.dataframe(latest[["_dt", "Machine_ID", "Operation_Mode", "Predicted_Efficiency", "Prediction_Confidence"]].tail(30), width='stretch')
+        st.write(f"**Model in use:** {best_model_name}")
+        st.dataframe(latest[["_dt", "Machine_ID", "Operation_Mode", "Predicted_Efficiency", "Prediction_Confidence"]].tail(30), use_container_width=True)
 
     with c2:
         fig = px.histogram(latest, x="Prediction_Confidence", nbins=20, title="Confidence score visualization")
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
 
     # Machine-Level Insights
     st.subheader("Machine-Level Insights")
@@ -199,7 +199,7 @@ def main():
         .reset_index(name="count")
     )
     fig2 = px.bar(g, x="Machine_ID", y="count", color="Predicted_Efficiency", barmode="group", title="Efficiency trends per machine")
-    st.plotly_chart(fig2, width='stretch')
+    st.plotly_chart(fig2, use_container_width=True)
 
     # Explainability Panel (simple feature importance when available)
     st.subheader("Explainability Panel")
@@ -214,7 +214,7 @@ def main():
             imp = pd.DataFrame({"feature": feature_names, "importance": clf.feature_importances_})
             imp = imp.sort_values("importance", ascending=False).head(20)
             fig3 = px.bar(imp, x="importance", y="feature", orientation="h", title="Top drivers of efficiency status")
-            st.plotly_chart(fig3, width='stretch')
+            st.plotly_chart(fig3, use_container_width=True)
         except Exception as e:
             st.info(f"Could not compute feature importance: {e}")
     elif clf is not None and pre is not None and hasattr(clf, "coef_"):
@@ -225,7 +225,7 @@ def main():
             imp = pd.DataFrame({"feature": feature_names, "importance": coef_abs})
             imp = imp.sort_values("importance", ascending=False).head(20)
             fig3 = px.bar(imp, x="importance", y="feature", orientation="h", title="Top drivers of efficiency status")
-            st.plotly_chart(fig3, width='stretch')
+            st.plotly_chart(fig3, use_container_width=True)
         except Exception as e:
             st.info(f"Could not compute coefficient importance: {e}")
     else:
@@ -270,7 +270,7 @@ def main():
             local["abs"] = np.abs(local["shap_value"])
             local = local.sort_values("abs", ascending=False).head(15)
             fig_local = px.bar(local.iloc[::-1], x="shap_value", y="feature", orientation="h", title="Local explanation (top contributions)")
-            st.plotly_chart(fig_local, width='stretch')
+            st.plotly_chart(fig_local, use_container_width=True)
         except Exception as e:
             st.info(f"SHAP explanation unavailable: {e}")
 
