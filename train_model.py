@@ -135,14 +135,14 @@ def build_preprocess_pipeline(df: pd.DataFrame) -> tuple[ColumnTransformer, list
 
     numeric_pipe = Pipeline(
         steps=[
-            ("imputer", SimpleImputer(strategy="median")),
+            ("imputer", SimpleImputer(strategy="median", add_indicator=False)),
             ("scaler", StandardScaler()),
         ]
     )
 
     categorical_pipe = Pipeline(
         steps=[
-            ("imputer", SimpleImputer(strategy="most_frequent")),
+            ("imputer", SimpleImputer(strategy="most_frequent", add_indicator=False)),
             (
                 "onehot",
                 OneHotEncoder(handle_unknown="ignore", sparse_output=False),
